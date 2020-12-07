@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Circuit resistance</title>
+</head>
+<body>
+    <main>
+        <div>
+        <span class="formula">
+            R = U/I
+        </span></br>
+        <span>
+            R – сопротивление
+        </span></br>
+        <span>
+            U – напряжение
+        </span></br>
+        <span>
+            I – сила тока
+        </span></br>
+        </div>
+        <div>Напряжение: <input type="text" id="voltage" value="" placeholder="0" autocomplete="off"> В<br></div>
+        <div>Сила тока: <input type="text" id="amperage" value="" placeholder="0" autocomplete="off"> А<br></div>
+        <button onclick="userSubmit()" type="submit">Вычислить</button>
+        <div id="result"></div>
+    </main>
+
+    <script>
+        function userSubmit() {
+            let voltage = document.getElementById('voltage').value;
+            let amperage = document.getElementById('amperage').value;
+
+            if (isNaN(voltage) || isNaN(amperage)) {
+                document.getElementById('result').innerHTML = 'Данные введены неверно!';
+            }
+            else {
+                document.getElementById('result').innerHTML = calcResistance(voltage, amperage);
+            }
+        }
+
+        function calcResistance(voltage, amperage) {
+            if (amperage == 0) {
+                return 'На 0 делить нельзя!';
+            } else
+            {
+                return 'R = '+ (voltage/amperage) + ' Ом';
+            }
+        }
+    </script>
+</body>
+</html>
