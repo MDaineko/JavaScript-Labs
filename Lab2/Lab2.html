@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>Sum of dumbbell masses</title>
+</head>
+<body>
+<main>
+	<div>Введите массу 1-ой гантели: <input type="text" id="first_dumbl_wght" value="" placeholder="0" autocomplete="off"> кг<br></div>
+	<div>Введите массу 2-ой гантели: <input type="text" id="second_dumbl_wght" value="" placeholder="0" autocomplete="off"> кг<br></div>
+	<div>Введите массу 3-ей гантели: <input type="text" id="third_dumbl_wght" value="" placeholder="0" autocomplete="off"> кг<br></div>
+	<button onclick="userSubmit()" type="submit">Вычислить</button>
+	<div id="result"></div>
+
+</main>
+<script type='text/javascript'>
+	let firstDumbbellWeight,
+		secondDumbbellWeight,
+		thirdDumbbellWeight,
+		sum,
+		theLightestDumbbell,
+		theHeaviestDumbbell;
+
+	function userSubmit() {
+		firstDumbbellWeight = +document.getElementById('first_dumbl_wght').value;
+		secondDumbbellWeight = +document.getElementById('second_dumbl_wght').value;
+		thirdDumbbellWeight = +document.getElementById('third_dumbl_wght').value;
+
+		if (isNaN(firstDumbbellWeight) || isNaN(secondDumbbellWeight) || isNaN(thirdDumbbellWeight)) {
+			document.getElementById('result').innerHTML = 'Данные введены неверно!';
+		} else {
+			document.getElementById('result').innerHTML = calcSum();
+		}
+	}
+
+	function calcSum() {
+		theLightestDumbbell = Math.min(firstDumbbellWeight, secondDumbbellWeight, thirdDumbbellWeight);
+		theHeaviestDumbbell = Math.max(firstDumbbellWeight, secondDumbbellWeight, thirdDumbbellWeight);
+		sum = firstDumbbellWeight + secondDumbbellWeight + thirdDumbbellWeight;
+		return `Сумма масс всех гантелей: ${sum} кг <br> Вес самой тяжёлой гантели: ${theHeaviestDumbbell} кг <br> Вес самой лёгкой гантели: ${theLightestDumbbell} кг`;
+	}
+</script>
+</body>
+</html>
