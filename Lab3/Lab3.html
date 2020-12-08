@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Vowels & consonats number</title>
+</head>
+<body>
+<main>
+    <div>Фамилия: <input type="text" id="surname" value="" placeholder="Введите фамилию" autocomplete="off"><br></div>
+    <button onClick="userSubmit()" type="submit">Подвердить</button><br>
+    <div id='numberOfVowels'></div>
+    <div id='numberOfConsonats'></div>
+</main>
+<script type='text/javascript'>
+    function userSubmit() {
+        let surname = document.getElementById('surname').value;
+        let vowelsNum = 0;
+        let consonatsNum = 0;
+        let vowels = 'АУОЫИЭЯЮЁЕауоыиэяюёе';
+        for(let i = 0; i < surname.length; i++){
+            for(let j = 0; j < vowels.length; j++){
+                if(surname[i] == vowels[j]){
+                    vowelsNum++;
+                    break;
+                }
+            }
+        }
+        consonatsNum = surname.length-vowelsNum;
+        document.getElementById('numberOfVowels').innerHTML = 'Количество гласных: ' +vowelsNum;
+        document.getElementById('numberOfConsonats').innerHTML = 'Количество согласных: ' +consonatsNum;
+    }
+</script>
+</body>
+</html>
