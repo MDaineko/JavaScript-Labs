@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title></title>
+</head>
+<body>
+<script type='text/javascript'>
+    let Resistor1 = prompt('Введите сопротивление 1-го резистора:' );
+    if (isNaN(Resistor1)){
+        alert('Данные введены неверно!');
+    } else {
+        Resistor1 = parseFloat(Resistor1);
+    }
+
+    let Resistor2 = prompt('Введите сопротивление 2-го резистора:' );
+    if (isNaN(Resistor2)){
+        alert('Данные введены неверно!');
+    } else {
+        Resistor2 = parseFloat(Resistor2);
+    }
+
+    alert('Последовательное соединение:' + (Resistor1 + Resistor2) + ' Ом' + '\nПараллельное соединение:' + (1/(1/Resistor1+1/Resistor2))) + ' Ом';
+</script>
+</body>
+</html>
