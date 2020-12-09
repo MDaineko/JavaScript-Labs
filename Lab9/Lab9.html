@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Current Time</title>
+
+</head>
+<body>
+<script type='text/javascript'>
+    let date = new Date();
+    let currentTime = date.getHours() +0.01*date.getMinutes();
+
+    document.write(date +"<br>");
+    document.write(currentTime + ' – ');
+
+    if (currentTime >= 7 && currentTime <= 8){
+        document.write('Время завтрака' + '<br>');
+    } else if(currentTime >=13 && currentTime <= 14){
+        document.write('Время обеда' + '<br>');
+    } else if(currentTime >=19 && currentTime <= 20){
+        document.write('Время ужина' + '<br>');
+    } else if(currentTime >=18 && currentTime <= 23){
+        document.write('Время отдыха' + '<br>');
+    }else if(currentTime >=23 && currentTime <= 6.30){
+        document.write('Время сна');
+    } else {
+        document.write('Время работы');
+    }
+</script>
+</body>
+</html>
