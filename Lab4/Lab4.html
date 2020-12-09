@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Symbol number 5</title>
+</head>
+<body>
+<main>
+    <div>Ваша строка: <input type="text" id="string" value="" placeholder="Введите строку длинной 20 символов" autocomplete="off" size="35"><br></div>
+    <button onclick="userSubmit()" type="submit">Вычислить</button>
+</main>
+<script type='text/javascript'>
+    function userSubmit() {
+        let string = document.getElementById('string').value;
+        let numRep = 0;
+        let symbol = string[4];
+
+        if (string.length > 20) {
+            alert('Количество символов с строке превышает допустимо! Попробуйте ещё раз.')
+        } else {
+            for (let i = 0; i < string.length; i++) {
+                if (string[i] == symbol){
+                    numRep += 1;
+                }
+            }
+        }
+
+        alert('Количество повторений 5-го символа в строке:' + '\n' + numRep);
+    }
+</script>
+</body>
+</html>
