@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Simple Calculator</title>
+</head>
+<body>
+<main>
+</main>
+<script type='text/javascript'>
+    let firstNum = parseFloat(prompt('Введите 1-ое число: ')),
+        secondNum = parseFloat(prompt('Введите 2-ое число: '));
+    if (!isNaN(firstNum)){
+        if(!isNaN(secondNum)){
+            var operation = parseInt(prompt('Выберите номер операции: 1 – сложение, 2 – вычитание, 3 – умножение, 4 – деление'));
+            switch (operation) {
+                case 1:
+                    document.write(firstNum +'+' +secondNum +'=' + (firstNum+secondNum));
+                    break;
+                case 2:
+                    document.write(firstNum +'-' +secondNum +'=' + (firstNum-secondNum));
+                    break;
+                case 3:
+                    document.write(firstNum +'*' +secondNum +'=' + (firstNum*secondNum));
+                    break;
+                case 4:
+                    document.write(firstNum +'/' +secondNum +'=' + (firstNum/secondNum));
+                    break;
+                default : document.write('Данные введены неверно!');
+                    break;
+
+            }
+        } else alert('Вы не ввели 1-ое число!');
+    } else alert('Вы не ввели 2-ое число!')
+</script>
+</body>
+</html>
