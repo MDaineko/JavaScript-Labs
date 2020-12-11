@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Numeric array</title>
+
+</head>
+<body>
+<script type='text/javascript'>
+    var n = prompt('Введите количество элементов массива: ');
+    var array = [];
+
+    function getRandomInt(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    for (var i = 0; i < n; i++) {
+        var number = getRandomInt(0, 10);
+        array.push(number);
+    }
+
+    alert(array);
+</script>
+</body>
+</html>
